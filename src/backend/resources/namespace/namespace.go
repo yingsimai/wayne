@@ -13,7 +13,7 @@ import (
 	"github.com/Qihoo360/wayne/src/backend/util"
 )
 
-func CreateNotExitNamespace(cli *kubernetes.Clientset, ns *v1.Namespace) (*v1.Namespace, error) {
+func CreateNotExitsNamespace(cli *kubernetes.Clientset, ns *v1.Namespace) (*v1.Namespace, error) {
 	_, err := cli.CoreV1().Namespaces().Get(ns.Name, metaV1.GetOptions{})
 	if err != nil {
 		if errors.IsNotFound(err) {
